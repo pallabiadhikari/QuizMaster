@@ -26,7 +26,11 @@ SECRET_KEY = 'django-insecure-s%p$13s*o5d%4hkyhqhd3#r)t%0bs!vkvsgf93wv&s_qvv@(xw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "django-m232.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -40,7 +44,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quiz',
     'rest_framework',
-    'whitenoise',
 ]
 
 MIDDLEWARE = [
@@ -121,7 +124,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT=os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_STORAGE='whitenoise.storage.CompressManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL='/media/'
 MEDIA_ROOT=BASE_DIR/'media'
 # Default primary key field type
